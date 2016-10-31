@@ -1,7 +1,7 @@
 'use strict'
 
-import db from './_db'
+const db = require('./_db')
 
-export default db
+const User = require('./models/user')
 
-import User from './models/user'
+module.exports = db;

@@ -1,9 +1,9 @@
 'use strict'
 
-import path from 'path'
-import devConfigPath from './development.js'
-import prodConfigPath from './production.js'
-import testConfigPath from './testing.js'
+const path = require('path')
+const devConfigPath = require('./development.js')
+const prodConfigPath = require('./production.js')
+const testConfigPath = require('./testing.js')
 
 if (process.env.NODE_ENV === 'production') {
   module.exports = prodConfigPath

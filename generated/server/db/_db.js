@@ -1,8 +1,8 @@
 'use strict'
 
-import path from 'path'
-import Sequelize from 'sequelize'
-import env from '../env'
+const path = require('path')
+const Sequelize = require('sequelize')
+const env = require('../env')
 
 const options = {}
 
@@ -12,5 +12,5 @@ if (process.env.NODE_ENV === 'testing') {
 
 const db = new Sequelize(env.DATABASE_URI, options)
 
-export default db
+module.exports = db
 

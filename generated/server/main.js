@@ -1,7 +1,7 @@
 'use strict'
 
-import chalk from 'chalk'
-import db from './db'
+const chalk = require('chalk')
+const db = require('./db')
 
 // Create a node server instance!
 const server = require('http').createServer()

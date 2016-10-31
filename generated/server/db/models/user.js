@@ -1,9 +1,9 @@
 'use strict'
 
-import crypto from 'crypto'
-import _omit from 'lodash/omit'
-import Sequelize from 'sequelize'
-import db from '../_db'
+const crypto = require('crypto')
+const _omit = require('lodash/omit')
+const Sequelize = require('sequelize')
+const db = require('../_db')
 
 const definitions = {
   email: {
@@ -47,4 +47,4 @@ const methods = {
   }
 }
 
-export default db.define('user', definitions, methods)
+module.exports = db.define('user', definitions, methods)

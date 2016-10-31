@@ -1,8 +1,8 @@
 'use strict'
 
-import path from 'path'
-import express from 'express'
-import configure from './configure'
+const path = require('path')
+const express = require('express')
+const configure = require('./configure')
 
 const app = express()
 
