@@ -5,5 +5,7 @@
 
 <h4 align="center">
   made by <a href="http://www.fullstackacademy.com/">Fullstack Academy</a>
-  Credit to Jason Hang for the original forked library, <a href="https://github.com/jdhang/jrg">jrg</a>
 </h4>
+<h5 align="center">
+  Credit to Jason Hang and <a href="https://github.com/jdhang/jrg">jrg</a>
+</h5>
