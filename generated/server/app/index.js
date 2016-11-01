@@ -3,6 +3,7 @@
 const path = require('path')
 const express = require('express')
 const configure = require('./configure')
+const api = require('./api')
 
 const app = express()
 
@@ -12,7 +13,8 @@ module.exports = function (db) {
   // function located at server/app/configure/index.js
   configure(app, db)
 
-  // Routes definition
+  // Route definition can go here
+  app.use('/api', api)
 
   /*
    Middleware to catch URLs resembling file extensions
