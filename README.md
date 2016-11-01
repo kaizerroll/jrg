@@ -7,5 +7,5 @@
   made by <a href="http://www.fullstackacademy.com/">Fullstack Academy</a>
 </h4>
 <h5 align="center">
-  Credit to Jason Hang and <a href="https://github.com/jdhang/jrg">jrg</a>
+Credit to <a href="https://github.com/jdhang">Jason Hang</a> and <a href="https://github.com/jdhang/jrg">jrg</a>
 </h5>
