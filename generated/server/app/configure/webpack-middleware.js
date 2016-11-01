@@ -1,8 +1,6 @@
 'use strict'
 
-import path from 'path'
-
-module.exports = function (app) {
+module.exports = app => {
 
   if (process.env.NODE_ENV !== 'production') {
     const webpack = require('webpack')

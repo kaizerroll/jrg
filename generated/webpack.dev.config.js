@@ -6,35 +6,33 @@ const autoprefixer = require('autoprefixer')
 const precss = require('precss')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const indexPath = path.join(__dirname, 'client', 'src', 'index.html')
-
 module.exports = {
   devtool: 'eval',
   entry: [
     'babel-polyfill',
     'webpack-hot-middleware/client',
-    './client/src/app.js'
+    './browser/app.js'
   ],
   output: {
-    path: path.join(__dirname, 'client', 'build'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
-    modulesDirectories: ['client', 'node_modules']
+    modulesDirectories: ['browser', 'node_modules']
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        exclude: /(node_modules)|(bower_components)/
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,
         loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss!sass?sourceMap'),
-        include: /(client)|(node_modules)/
+        include: /(browser)|(node_modules)/
       }
     ]
   },

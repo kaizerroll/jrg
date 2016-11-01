@@ -1,12 +1,12 @@
 'use strict'
 
-import path from 'path'
-import chalk from 'chalk'
-import util from 'util'
+const path = require('path')
+const chalk = require('chalk')
+const util = require('util')
 
 const rootPath = path.join(__dirname, '../../../')
-const indexPath = path.join(rootPath, './client/build/index.html')
-const faviconPath = path.join(rootPath, './server/app/views/favicon.ico')
+const indexPath = path.join(rootPath, './public/index.html')
+const faviconPath = path.join(rootPath, './public/favicon.ico')
 
 const env = require(path.join(rootPath, './server/env'))
 

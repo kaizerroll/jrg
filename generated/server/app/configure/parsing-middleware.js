@@ -1,7 +1,7 @@
 'use strict'
 
-import cookieParser from 'cookie-parser'
-import bodyParser from 'body-parser'
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 
 module.exports = function (app) {
 

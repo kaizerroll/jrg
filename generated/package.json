@@ -1,15 +1,16 @@
 {
-  "name": "JasonGeneratedApp",
+  "name": "react-fullstack-generator",
   "version": "1.0.0",
   "description": "A generated React project",
   "main": "server/start.js",
   "scripts": {
     "start": "nodemon --watch server -e js,html server/start.js",
     "postinstall": "npm run build",
-    "build": "webpack --config ./webpack.dev.config.js",
-    "build:production": "NODE_ENV='production' webpack -p --config ./webpack.prod.config.js",
-    "test": "NODE_ENV='testing' ./node_modules/.bin/mocha --compilers js:babel-register ./client/**/*.test.js",
-    "test:watch": "NODE_ENV='testing' ./node_modules/.bin/mocha -w --compilers js:babel-register ./client/**/*.test.js",
+    "build": "webpack --config ./webpack.dev.config.js --progress --colors",
+    "build:watch": "webpack --config ./webpack.dev.config.js --progress --colors --watch",
+    "build:production": "NODE_ENV='production' webpack -p --config ./webpack.prod.config.js --progress --colors",
+    "test": "NODE_ENV='testing' ./node_modules/.bin/mocha --compilers js:babel-register ./browser/**/*.test.js",
+    "test:watch": "NODE_ENV='testing' ./node_modules/.bin/mocha -w --compilers js:babel-register ./browser/**/*.test.js",
     "cover": "nyc --reporter=lcov --reporter=text --reporter=html --require babel-register npm test"
   },
   "engines": {
@@ -50,7 +51,6 @@
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
-    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",

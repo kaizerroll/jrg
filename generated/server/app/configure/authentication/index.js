@@ -1,8 +1,8 @@
 'use strict'
 
-import path from 'path'
-import session from 'express-session'
-import passport from 'passport'
+const path = require('path')
+const session = require('express-session')
+const passport = require('passport')
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 

@@ -10,48 +10,24 @@ the database connection:
 The name of the database used is set in your environment files:
 --- server/env/*
 
-This seed file has a safety check to see if you already have users
-in the database. If you are developing multiple applications with the
-fsg scaffolding, keep in mind that fsg always uses the same database
-name in the environment files.
-
 */
 
-var chalk = require('chalk');
-var db = require('./server/db');
-var User = db.model('user');
-var Promise = require('sequelize').Promise;
+const chalk = require('chalk')
+const db = require('./server/db')
+const User = db.model('user')
 
-var seedUsers = function () {
-
-    var users = [
-        {
-            email: 'testing@fsa.com',
-            password: 'password'
-        },
-        {
-            email: 'obama@gmail.com',
-            password: 'potus'
-        }
-    ];
-
-    var creatingUsers = users.map(function (userObj) {
-        return User.create(userObj);
-    });
-
-    return Promise.all(creatingUsers);
-
-};
+const users = [
+    { email: 'testing@fsa.com', password: 'password' },
+    { email: 'obama@gmail.com', password: 'potus' }
+]
 
 db.sync({ force: true })
-    .then(function () {
-        return seedUsers();
-    })
-    .then(function () {
+    .then(() => Promise.all(users.map(user => User.create(user))))
+    .then(() => {
         console.log(chalk.green('Seed successful!'));
         process.exit(0);
     })
-    .catch(function (err) {
+    .catch(err => {
         console.error(err);
         process.exit(1);
-    });
+    })

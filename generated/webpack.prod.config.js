@@ -7,34 +7,34 @@ const precss = require('precss')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const indexPath = path.join(__dirname, 'client', 'src', 'index.html')
+const indexPath = path.join(__dirname, 'public', 'index.html')
 
 module.exports = {
   devtool: 'source-map',
   entry: [
     'babel-polyfill',
-    './client/src/app.js'
+    './browser/app.js'
   ],
   output: {
-    path: path.join(__dirname, 'client', 'build'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.scss'],
-    modulesDirectories: ['client', 'node_modules']
+    modulesDirectories: ['browser', 'node_modules']
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        exclude: /(node_modules)|(bower_components)/
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,
         loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss!sass'),
-        include: /(client)|(node_modules)/
+        include: /(browser)|(node_modules)/
       }
     ]
   },

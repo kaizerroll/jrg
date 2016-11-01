@@ -34,7 +34,11 @@ describe('MODULE - auth:', () => {
   describe('REDUCER', () => {
 
     const initialState = {
-      loaded: false
+      loading: false,
+      loaded: false,
+      loadError: null,
+      user: null,
+      error: null
     }
 
     it('returns the initial state', () => {

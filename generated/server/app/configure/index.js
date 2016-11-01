@@ -1,11 +1,11 @@
 'use strict'
 
-import nodePath from 'path'
-import addAppVariables from './app-variables'
-import addStaticMiddlware from './static-middleware'
-import addParsingMiddlware from './parsing-middleware'
-import addWebpackMiddleware from './webpack-middleware'
-import addAuthentication from './authentication'
+const nodePath = require('path')
+const addAppVariables = require('./app-variables')
+const addStaticMiddlware = require('./static-middleware')
+const addParsingMiddlware = require('./parsing-middleware')
+const addWebpackMiddleware = require('./webpack-middleware')
+const addAuthentication = require('./authentication')
 
 module.exports = function (app, db) {
 
